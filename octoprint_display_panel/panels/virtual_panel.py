@@ -135,7 +135,16 @@ class VirtualPanel:
             self._image = self._hold_image
         self.show()
         self._hold_image = None
-
+    
+		def clock(self):
+				"""Show the current time on the virtual panel.
+				"""
+				self._hold_image = self._image
+				self.fill(0)
+				"""Add the time to be displayed to the image here
+				"""
+				self.show()
+				
     def image(self, img):
         """Set a new image to be shown on the virtual panel.
         """
