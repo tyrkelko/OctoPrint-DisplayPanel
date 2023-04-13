@@ -167,26 +167,35 @@
 				</div>
 
 				<div class="control-group">
-					<label class="control-label">{{ _('Blank the Display when:') }}</label>
-					<div class="controls data-toggle="tooltip" title="{{ _('Condition triggering the display turning off (after the timeout.') }}"">
+					<label class="control-label">{{ _('Screen Saver when:') }}</label>
+					<div class="controls data-toggle="tooltip" title="{{ _('Condition triggering the screen saver (after the timeout.)') }}"">
 						<select data-bind="value: settings.plugins.display_panel.display_timeout_option">
 							<option value="-1">never</option>
 							<option value="0">printer is disconnected</option>
 							<option value="1">printer is disconnected or idle</option>
 							<option value="2">always</option>
 						</select>
-						<div class="help-block">{{ _('Condition triggering the display turning off after the timeout set below.<br />Paused prints or not printing are considered idle states.<br /> The display will turn on it the status changes; the printer connectes or a print starts for example.') }}</div>
+						<div class="help-block">{{ _('Condition triggering the display screen saver after the timeout set below.<br />Paused prints or not printing are considered idle states.<br /> The display will turn on it the status changes; the printer connectes or a print starts for example.') }}</div>
+					</div>
+					<label class="control-label">{{ _('Screen Saver type:') }}</label>
+					<div class="controls data-toggle="tooltip" title="{{ _('Screen saver type (after the timeout.') }}"">
+						<select data-bind="value: settings.plugins.display_panel.display_screensaver_option">
+							<option value="-1">Clock</option>
+							<option value="0">Blank</option>
+							<option value="1">Clock</option>
+						</select>
+						<div class="help-block">{{ _('Select what to display when screen saver is triggered.') }}</div>
 					</div>
 				</div>
 
 				<div class="control-group">
 					<label class="control-label">{{ _('Display timeout:') }}</label>
-					<div class="controls" data-toggle="tooltip" title="{{ _('Time before turning off the display.') }}">
+					<div class="controls" data-toggle="tooltip" title="{{ _('Time before triggering screen saver.') }}">
             			<div class="input-append">
 							<input type="number" step="any" min="1" class="input-mini text-right" data-bind="value: settings.plugins.display_panel.display_timeout_time">
 							<span class="add-on">min</span>
 						</div>
-						<div class="help-block">{{ _('Time to wait before the display to turn off after the trigger above.<br />(The display can be turned on again by pressing any button.)') }}</div>
+						<div class="help-block">{{ _('Time to wait before starting the screen saver.<br />(The display can be resumed by pressing any button.)') }}</div>
 					</div>
 				</div>
 
